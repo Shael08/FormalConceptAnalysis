@@ -18,6 +18,15 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bipartite_graph.hpp" />
+    <ClInclude Include="bron_kerbosch.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bipartite_graph.cpp" />
+    <ClCompile Include="bron_kerbosch.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{645186A7-F36E-4888-B9FA-45A7EFF63752}</ProjectGuid>
@@ -117,15 +126,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\Documents\Formal_concept_analysis\Fca\bipartite_graph.cpp" />
-    <ClCompile Include="..\..\..\..\Documents\Formal_concept_analysis\Fca\bron_kerbosch.cpp" />
-    <ClCompile Include="..\..\..\..\Documents\Formal_concept_analysis\Fca\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\Documents\Formal_concept_analysis\Fca\bipartite_graph.hpp" />
-    <ClInclude Include="..\..\..\..\Documents\Formal_concept_analysis\Fca\bron_kerbosch.hpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
