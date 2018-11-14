@@ -1,44 +1,13 @@
-#include "bipartite_graph.hpp"
 #include "bron_kerbosch.hpp"
 #include <iostream>
+#include "extended_bipartite_graph.hpp"
 
-bron_kerbosch::bron_kerbosch(const bipartite_graph &t_graph)
+bron_kerbosch::bron_kerbosch(const graph_base &t_graph)
 {
-	this->m_rows = t_graph.get_universe_rows();
-	this->m_cols = t_graph.get_universe_cols();
-	this->m_vertices = m_rows + m_cols;
-	this->m_extended_adjacency_matrix.resize(m_vertices, boost::dynamic_bitset<>(m_vertices));
-	create_extended_graph(t_graph.get_universe());
-}
+	this->m_extended_adjacency_matrix = t_graph.get_universe();
+	this->m_dim = t_graph.get_dimensions();
+	this->m_vertices = m_extended_adjacency_matrix.size();
 
-void bron_kerbosch::create_extended_graph(const std::vector<boost::dynamic_bitset<> > &t_adjacency_matrix)
-{
-	for (int i = 0; i < m_rows; ++i)
-	{
-		for (int j = i + 1; j < m_rows; ++j)
-		{
-			m_extended_adjacency_matrix[i][j] = true;
-			m_extended_adjacency_matrix[j][i] = true;
-		}
-	}
-
-	for (int i = m_rows; i < m_rows + m_cols; ++i)
-	{
-		for (int j = i + 1; j < m_rows + m_cols; ++j)
-		{
-			m_extended_adjacency_matrix[i][j] = true;
-			m_extended_adjacency_matrix[j][i] = true;
-		}
-	}
-
-	for (int i = 0; i < m_rows; ++i)
-	{
-		for (int j = 0; j < m_cols; ++j)
-		{
-			m_extended_adjacency_matrix[m_rows + j][i] = t_adjacency_matrix[i][j];
-			m_extended_adjacency_matrix[i][m_rows + j] = t_adjacency_matrix[i][j];
-		}
-	}
 }
 
 std::vector<int> bron_kerbosch::set_union(std::vector<int> r, const int v)
@@ -72,13 +41,13 @@ void bron_kerbosch::print_clique(std::vector<int> clique) const
 
 	for (auto it = clique.begin(); it != clique.end(); ++it)
 	{
-		if ((*it) < m_rows)
+		if ((*it) < m_dim.row)
 		{
 			part_a.emplace_back(*it);
 		}
 		else
 		{
-			part_b.emplace_back((*it) - m_rows);
+			part_b.emplace_back((*it) - m_dim.row);
 		}
 	}
 
@@ -115,19 +84,6 @@ void bron_kerbosch::bron_kerbosch_algorithm(const std::vector<int>& r, std::vect
 		x = set_union(x, (*v));
 		v = p.erase(v);
 	}
-}
-
-void bron_kerbosch::print_extended_graph() const
-{
-	for (int i = 0; i < m_vertices; ++i)
-	{
-		for (int j = 0; j < m_vertices; ++j)
-		{
-			std::cout << m_extended_adjacency_matrix[i][j] << " ";
-		}
-		std::cout << std::endl;
-	}
-	std::cout << std::endl;
 }
 
 void bron_kerbosch::start()

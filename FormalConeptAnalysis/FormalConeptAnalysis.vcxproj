@@ -21,11 +21,19 @@
   <ItemGroup>
     <ClInclude Include="bipartite_graph.hpp" />
     <ClInclude Include="bron_kerbosch.hpp" />
+    <ClInclude Include="extended_bipartite_graph.hpp" />
+    <ClInclude Include="graph.hpp" />
+    <ClInclude Include="graph_base.hpp" />
+    <ClInclude Include="ostergard.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bipartite_graph.cpp" />
     <ClCompile Include="bron_kerbosch.cpp" />
+    <ClCompile Include="extended_bipartite_graph.cpp" />
+    <ClCompile Include="graph.cpp" />
+    <ClCompile Include="graph_base.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ostergard.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
