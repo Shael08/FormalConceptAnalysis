@@ -21,9 +21,15 @@ private:
 	void bron_kerbosch_algorithm(const std::vector<int> &r, std::vector<int> p, std::vector<int> x);
 
 public:
-	explicit bron_kerbosch(const graph_base &t_graph);
+	explicit bron_kerbosch(const extended_bipartite_graph &t_graph);
 
 	~bron_kerbosch() = default;
+
+	bron_kerbosch(const bron_kerbosch&) = delete; // copy constructor
+	bron_kerbosch& operator=(const bron_kerbosch&) = delete; // copy assignment
+
+	bron_kerbosch(bron_kerbosch&&) = delete;  // move constructor
+	bron_kerbosch& operator=(bron_kerbosch&&) = delete; // move assignment
 
 	void start();
 };

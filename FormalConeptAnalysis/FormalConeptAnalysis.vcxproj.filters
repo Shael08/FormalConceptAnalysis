@@ -19,14 +19,14 @@
     <Filter Include="Source Files\graph">
       <UniqueIdentifier>{0589b8e6-ff82-4057-903e-5c51be261f6d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\clique">
+      <UniqueIdentifier>{fe455fb4-acdd-473b-93ba-de92241b8e2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\clique">
+      <UniqueIdentifier>{d9a31364-a339-47b3-8a96-f1640d14be06}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="bron_kerbosch.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ostergard.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="graph.hpp">
       <Filter>Header Files\graph</Filter>
     </ClInclude>
@@ -39,15 +39,15 @@
     <ClInclude Include="bipartite_graph.hpp">
       <Filter>Header Files\graph</Filter>
     </ClInclude>
+    <ClInclude Include="bron_kerbosch.hpp">
+      <Filter>Header Files\clique</Filter>
+    </ClInclude>
+    <ClInclude Include="ostergard.hpp">
+      <Filter>Header Files\clique</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="bron_kerbosch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ostergard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="graph.cpp">
@@ -61,6 +61,12 @@
     </ClCompile>
     <ClCompile Include="bipartite_graph.cpp">
       <Filter>Source Files\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="ostergard.cpp">
+      <Filter>Source Files\clique</Filter>
+    </ClCompile>
+    <ClCompile Include="bron_kerbosch.cpp">
+      <Filter>Source Files\clique</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -14,9 +14,9 @@ dimension graph_base::get_dimensions() const
 
 void graph_base::print_graph() const
 {
-	for (int i = 0; i < m_vertices; ++i)
+	for (int i = 0; i < m_dim.rows; ++i)
 	{
-		for (int j = 0; j < m_vertices; ++j)
+		for (int j = 0; j < m_dim.cols; ++j)
 		{
 			std::cout << m_adjacency_matrix[i][j] << " ";
 		}

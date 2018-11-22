@@ -4,11 +4,10 @@
 graph::graph(char *file)
 {
 	read_graph(file);
-	m_dim.row = m_vertices;
+	m_dim.rows = m_vertices;
 	m_dim.cols = m_vertices;
 }
 
-graph::~graph() = default;
 
 void graph::read_graph(char *file) {
 	std::ifstream file_;

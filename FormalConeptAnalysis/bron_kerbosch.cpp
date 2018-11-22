@@ -2,11 +2,11 @@
 #include <iostream>
 #include "extended_bipartite_graph.hpp"
 
-bron_kerbosch::bron_kerbosch(const graph_base &t_graph)
+bron_kerbosch::bron_kerbosch(const extended_bipartite_graph &t_graph)
 {
 	this->m_extended_adjacency_matrix = t_graph.get_universe();
-	this->m_dim = t_graph.get_dimensions();
-	this->m_vertices = m_extended_adjacency_matrix.size();
+	this->m_dim = t_graph.get_bipartite_graph_dimension();
+	this->m_vertices = m_dim.rows + m_dim.cols;
 
 }
 
@@ -41,13 +41,13 @@ void bron_kerbosch::print_clique(std::vector<int> clique) const
 
 	for (auto it = clique.begin(); it != clique.end(); ++it)
 	{
-		if ((*it) < m_dim.row)
+		if ((*it) < m_dim.rows)
 		{
 			part_a.emplace_back(*it);
 		}
 		else
 		{
-			part_b.emplace_back((*it) - m_dim.row);
+			part_b.emplace_back((*it) - m_dim.rows);
 		}
 	}
 

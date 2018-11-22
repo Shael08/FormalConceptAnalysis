@@ -3,7 +3,7 @@
 
 struct dimension
 {
-	int row;
+	int rows;
 	int cols;
 };
 
@@ -18,6 +18,16 @@ protected:
 	std::vector< boost::dynamic_bitset<> > m_adjacency_matrix;
 
 public:
+
+	graph_base() = default;
+
+	virtual ~graph_base() = default;
+
+	graph_base(const graph_base&) = delete; // copy constructor
+	graph_base& operator=(const graph_base&) = delete; // copy assignment
+
+	graph_base(graph_base&&) = delete;  // move constructor
+	graph_base& operator=(graph_base&&) = delete; // move assignment
 
 	std::vector< boost::dynamic_bitset<> > get_universe() const;
 
