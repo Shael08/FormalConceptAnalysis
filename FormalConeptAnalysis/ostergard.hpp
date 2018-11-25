@@ -7,17 +7,17 @@ class ostergard
 private:
 
 	std::vector<boost::dynamic_bitset<> > m_adjacency_matrix;
-	std::vector<boost::dynamic_bitset<> > m_adjacency_matrix_t;
 	dimension m_dim{};
+
 	int m_vertices;
-
-	int m_max;
-	int *m_clique;
+	int *m_c;
 	bool m_found;
+	std::vector<int> m_clique;
 
+	void clique(boost::dynamic_bitset<> u, std::vector<int> t_clique);
+	void bipartite_clique(boost::dynamic_bitset<> u, boost::dynamic_bitset<> v, std::vector<int> t_clique);
 
-	void clique(boost::dynamic_bitset<> u, int size);
-	void bipartite_clique(boost::dynamic_bitset<> u, boost::dynamic_bitset<> v, int size, const bool &in_transposed);
+	void print_clique();
 
 public:
 	explicit ostergard(const graph_base &t_graph);

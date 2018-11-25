@@ -1,11 +1,11 @@
 #include "graph_base.hpp"
 #include <iostream>
 
-
 std::vector<boost::dynamic_bitset<>> graph_base::get_universe() const
 {
 	return m_adjacency_matrix;
 }
+
 
 dimension graph_base::get_dimensions() const
 {

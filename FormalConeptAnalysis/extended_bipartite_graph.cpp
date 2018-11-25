@@ -2,7 +2,7 @@
 #include "bipartite_graph.hpp"
 
 
-extended_bipartite_graph::extended_bipartite_graph(const bipartite_graph & t_graph)
+extended_bipartite_graph::extended_bipartite_graph(const bipartite_graph & t_graph): graph_base()
 {
 	this->m_base_dimension = t_graph.get_dimensions();
 	this->m_vertices = m_base_dimension.rows + m_base_dimension.cols;

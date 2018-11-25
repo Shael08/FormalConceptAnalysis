@@ -1,7 +1,7 @@
-#include "graph.hpp"
+#include "simple_graph.hpp"
 #include <fstream>
 
-graph::graph(char *file)
+simple_graph::simple_graph(char *file)
 {
 	read_graph(file);
 	m_dim.rows = m_vertices;
@@ -9,7 +9,7 @@ graph::graph(char *file)
 }
 
 
-void graph::read_graph(char *file) {
+void simple_graph::read_graph(char *file) {
 	std::ifstream file_;
 	file_.open(file);
 
@@ -39,8 +39,8 @@ void graph::read_graph(char *file) {
 
 				file_ >> fv >> sv;
 
-				m_adjacency_matrix[fv - 1][sv - 1] = 1;
-				m_adjacency_matrix[sv - 1][fv - 1] = 1;
+				m_adjacency_matrix[fv - 1][sv - 1] = true;
+				m_adjacency_matrix[sv - 1][fv - 1] = true;
 			}
 
 		}
