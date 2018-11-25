@@ -24,15 +24,9 @@ void ostergard::clique(boost::dynamic_bitset<> u, std::vector<int> t_clique)
 		if(t_clique.size() > m_clique.size())
 		{
 			m_clique = t_clique;
-			std::cout << m_clique.size() << std::endl;
-
-			for (std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>::value_type& it : m_clique)
-			{
-				std::cout << it << " ";
-			}
-
-			std::cout << std::endl;
 			m_found = true;
+
+			print_clique();
 		}
 	}
 

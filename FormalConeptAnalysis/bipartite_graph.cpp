@@ -22,8 +22,6 @@ void bipartite_graph::create_random_graph()
 			{
 				m_adjacency_matrix[i][j] = true;
 			}
-
-			//m_adjacency_matrix[i][j] = m_matrix[i][j];
 		}
 	}
 }
