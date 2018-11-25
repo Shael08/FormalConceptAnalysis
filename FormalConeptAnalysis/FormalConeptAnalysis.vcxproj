@@ -21,7 +21,6 @@
   <ItemGroup>
     <ClInclude Include="bipartite_graph.hpp" />
     <ClInclude Include="bron_kerbosch.hpp" />
-    <ClInclude Include="clique_base.h" />
     <ClInclude Include="extended_bipartite_graph.hpp" />
     <ClInclude Include="simple_graph.hpp" />
     <ClInclude Include="graph_base.hpp" />
@@ -30,7 +29,6 @@
   <ItemGroup>
     <ClCompile Include="bipartite_graph.cpp" />
     <ClCompile Include="bron_kerbosch.cpp" />
-    <ClCompile Include="clique_base.cpp" />
     <ClCompile Include="extended_bipartite_graph.cpp" />
     <ClCompile Include="simple_graph.cpp" />
     <ClCompile Include="graph_base.cpp" />

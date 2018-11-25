@@ -42,9 +42,6 @@
     <ClInclude Include="graph_base.hpp">
       <Filter>Header Files\graph</Filter>
     </ClInclude>
-    <ClInclude Include="clique_base.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="simple_graph.hpp">
       <Filter>Header Files\graph</Filter>
     </ClInclude>
@@ -67,9 +64,6 @@
     </ClCompile>
     <ClCompile Include="bron_kerbosch.cpp">
       <Filter>Source Files\clique</Filter>
-    </ClCompile>
-    <ClCompile Include="clique_base.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="simple_graph.cpp">
       <Filter>Source Files\graph</Filter>
