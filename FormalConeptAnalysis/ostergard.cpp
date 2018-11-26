@@ -65,14 +65,14 @@ void ostergard::bipartite_clique(boost::dynamic_bitset<> u, boost::dynamic_bitse
 	{
 		m_clique = t_clique;
 
-		for (int i = 0; i < v.size(); ++i)
+		for (unsigned i = 0; i < v.size(); ++i)
 		{
 			if (v[i]) m_clique.push_back(i);
 		}
 
 		m_found = true;
 
-		print_clique();
+		//print_clique();
 	}
 	
 	while (u.any())
@@ -112,9 +112,9 @@ void ostergard::print_clique()
 
 	std::cout << "Clique Elements are: ";
 
-	for (std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>::value_type& it : m_clique)
+	for (std::vector<int>::iterator it = m_clique.begin(); it != m_clique.end(); ++it)
 	{
-		std::cout << it << " ";
+		std::cout << (*it) << " ";
 	}
 
 	std::cout << std::endl;
@@ -122,8 +122,9 @@ void ostergard::print_clique()
 
 void ostergard::start()
 {
-
 	std::vector<int> t_clique;
+
+	const std::clock_t start = std::clock();
 
 	for (int i = m_vertices - 1; i >= 0; --i)
 	{
@@ -144,6 +145,14 @@ void ostergard::start()
 
 		m_c[i] = m_clique.size();
 	}
+
+	const double duration = double(double(std::clock()) - start) / double(CLOCKS_PER_SEC);
+
+	print_clique();
+
+	std::cout << "Running time: " << duration << '\n';
+
+
 }
 
 void ostergard::start_bipartite()
@@ -152,6 +161,8 @@ void ostergard::start_bipartite()
 	m_c = new int[m_dim.rows];
 
 	std::vector<int> t_clique;
+
+	const std::clock_t start = std::clock();
 
 	for (int i = m_dim.rows - 1; i >= 0; --i)
 	{
@@ -176,4 +187,12 @@ void ostergard::start_bipartite()
 
 		m_c[i] = m_clique.size();
 	}
+
+	const double duration = double(double(std::clock()) - start) / double(CLOCKS_PER_SEC);
+
+	print_clique();
+
+	std::cout << "Running time: " << duration << '\n';
+
+
 }
