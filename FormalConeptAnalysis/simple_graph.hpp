@@ -3,9 +3,14 @@
 
 class simple_graph : public graph_base
 {
+private:
+	std::string m_file_name;
+	void read_graph(const char* file);
+
 public:
 
 	explicit simple_graph(char *file);
+	explicit simple_graph(const std::string &file);
 	~simple_graph() = default;
 
 	simple_graph(const simple_graph&) = delete; // copy constructor
@@ -13,6 +18,6 @@ public:
 	simple_graph(simple_graph&&) = delete;  // move constructor
 	simple_graph& operator=(simple_graph&&) = delete; // move assignment
 
-	void read_graph(char* file);
+	std::string get_file_name() const;
 };
 

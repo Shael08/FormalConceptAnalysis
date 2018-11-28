@@ -6,10 +6,25 @@ simple_graph::simple_graph(char *file)
 	read_graph(file);
 	m_dim.rows = m_vertices;
 	m_dim.cols = m_vertices;
+	m_file_name = std::string(file);
+}
+
+simple_graph::simple_graph(const std::string &file)
+{
+	const char* filename = file.c_str();
+	read_graph(filename);
+	m_dim.rows = m_vertices;
+	m_dim.cols = m_vertices;
+	m_file_name = file;
+}
+
+std::string simple_graph::get_file_name() const
+{
+	return m_file_name;
 }
 
 
-void simple_graph::read_graph(char *file) {
+void simple_graph::read_graph(const char *file) {
 	std::ifstream file_;
 	file_.open(file);
 

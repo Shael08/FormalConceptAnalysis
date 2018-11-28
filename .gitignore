@@ -336,3 +336,4 @@ ASALocalRun/
 *.xlsx
 *.o
 /FormalConeptAnalysis/main
+*.csv

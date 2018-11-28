@@ -25,6 +25,12 @@
     <Filter Include="Source Files\clique">
       <UniqueIdentifier>{d9a31364-a339-47b3-8a96-f1640d14be06}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\coloring">
+      <UniqueIdentifier>{c80b875e-233f-410f-81af-069d6db3a58c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\coloring">
+      <UniqueIdentifier>{8efe05b6-f2fa-42e3-9e3f-24e0073336d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="extended_bipartite_graph.hpp">
@@ -44,6 +50,9 @@
     </ClInclude>
     <ClInclude Include="simple_graph.hpp">
       <Filter>Header Files\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="iterated_greedy_with_dsatur.hpp">
+      <Filter>Header Files\coloring</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +76,9 @@
     </ClCompile>
     <ClCompile Include="simple_graph.cpp">
       <Filter>Source Files\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="iterated_greedy_with_dsatur.cpp">
+      <Filter>Source Files\coloring</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
